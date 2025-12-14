@@ -3,7 +3,7 @@
 Restoring sharp, noise-free content from handheld captures is the main goal of this UCSD ECE253 project by Group 6657. The repository is organized into two complementary research tracks:
 
 - **Deblurring** — A PyTorch implementation of MPRNet for motion-blur removal from real-life sequences.
-- **Denoising** — Upcoming experiments on recovering clean signals from high-ISO and low-light captures (structure stubbed out for future work).
+- **Denoising** — A FFDNet-based model for recovering clean signals from high-ISO and low-light captures (structure stubbed out for future work).
 
 Use this document as the single source of truth for assets, environment setup, training/evaluation commands, and project status.
 
