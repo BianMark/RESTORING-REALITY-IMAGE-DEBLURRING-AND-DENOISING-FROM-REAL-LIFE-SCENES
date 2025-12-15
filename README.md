@@ -15,14 +15,15 @@ Use this document as the single source of truth for assets, environment setup, t
 | `Deblurring/Datasets/` | Placeholder directory; download datasets via the linked Drive folder before training/testing. |
 | `Deblurring/pretrained_models/` | Folder for pretrained checkpoints (`model_deblurring.pth`) retrieved from Drive. |
 | `Deblurring/results/` | Stores inference outputs; curated qualitative comparisons live in the linked Drive folder. |
-| `Denoising/` | (Coming soon) Will mirror the deblurring layout for noise removal experiments. |
+| `Denoising/` | Source for the FFDNet-based denoising pipeline |
+| `Deblurring/Datasets/` | Placeholder directory; download datasets via the link or manually before training/testing. |
 | `README.md` | High-level documentation (this file). |
 
 ## Getting Started
 
 ### 1. Clone and Environment
 
-> Any recent PyTorch build (1.11+) with CUDA is fine; adapt the install command to your GPU/OS combo. The notebooks under `Deblurring/*.ipynb` can be run on the Colab environment.
+> Any recent PyTorch build (1.11+) with CUDA is fine; adapt the install command to your GPU/OS combo. The notebooks under `Deblurring/*.ipynb` and `Denoising/*.ipynb` can be run on the Colab environment.
 
 ### 2. Data, Models, and Results
 
@@ -31,7 +32,8 @@ Use this document as the single source of truth for assets, environment setup, t
 | Deblurring datasets | [Drive link](https://drive.google.com/drive/folders/1y9eipStrhnKyPAxF32KZZXoUMjO_8q7_?usp=share_link) | Contains GoPro, HIDE, RealBlur (_train/test split expected as `Datasets/<dataset>/<split>/<input|target>`). |
 | Deblurring pretrained weights | [Drive link](https://drive.google.com/drive/folders/1HsB4PL_HtB6sKZvvXu4v3qBWcNwLbXt6?usp=share_link) | Download into `Deblurring/pretrained_models/`. Default `train.py` and `test.py` point to `model_deblurring.pth`. |
 | Deblurring results | [Drive link](https://drive.google.com/drive/folders/1QL4aco21Hs_-uVKbkkQ3DXqcRDu7d0pZ?usp=share_link) | Curated comparisons of inputs vs. outputs across datasets. |
-| Denoising datasets/models/results | _TBD_ | Links will be published when the denoising branch is added. |
+| Denoising datasets (STL10) | [Drive link](https://drive.google.com/drive/folders/1zBB8amtPaqe8kAPxAZdjoJ3FfCvg8wfu?usp=drive_link) | Low-res dataset |
+| Denoising datasets (DIV2K) | [Drive link](https://drive.google.com/drive/folders/19l2M5Efx1zy5lh-HEsfO2rIyumN7xeMq?usp=drive_link) | How-res real-life dataset |
 
 
 ## Deblurring Workflow (MPRNet)
@@ -80,15 +82,10 @@ python test.py \
 - Use `evaluate_RealBlur.py` or `evaluate_GOPRO_HIDE.m` for dataset-specific metrics once predictions are generated.
 - Store curated figures or processed `.npz` logs in the shared Drive so collaborators can review qualitative differences without pulling large assets.
 
-## Denoising Roadmap
+## Deblurring Workflow (MPRNet)
 
-The `Denoising/` directory will soon house:
-
-1. Baseline notebooks and PyTorch training scripts for real-image denoising.
-2. Dataset loaders covering SIDD, DND, and custom handheld captures.
-3. Shared checkpoints/results hosted in Drive, mirroring the deblurring structure.
-
-Until the branch lands, keep denoising experiments in separate feature branches and link interim documents here for continuity.
+ - Use 'FFDNet.ipynb' for running the pretrained model or perform testing.
+ - Make sure to download the corresponding dataset before running the notebooks.
 
 ## Contributing
 
