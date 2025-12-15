@@ -82,7 +82,7 @@ python test.py \
 - Use `evaluate_RealBlur.py` or `evaluate_GOPRO_HIDE.m` for dataset-specific metrics once predictions are generated.
 - Store curated figures or processed `.npz` logs in the shared Drive so collaborators can review qualitative differences without pulling large assets.
 
-## Deblurring Workflow (MPRNet)
+## Denoising Workflow (FFDNet)
 
  - Use 'FFDNet.ipynb' for running the pretrained model or perform testing.
  - Make sure to download the corresponding dataset before running the notebooks.
